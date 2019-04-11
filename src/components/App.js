@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 
-export function App() {
-  return (
+export class App extends React.Component {
+
+  render()
+  {
+    return (
     <div>
       <h1>IMDB</h1>
       <NavigationBar/>
       This is a sample stateful and server-side rendered React IMDB application.
     </div>
-  );
+    );
+  }
 }
 
 function NavigationBar(){
-
 
     const [movieType, setType] = useState("Popular");
 
