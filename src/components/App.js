@@ -28,48 +28,34 @@ export class App extends React.Component {
     movies: [],
   };
 
+  populateMovies = (moviesData) => {
+    console.log('populating data');
+    this.setState({movies : moviesData});
+    console.log(moviesData);
+  };
+
   render()
   {
     return (
     <div>
       <h1>IMDB</h1>
-      <NavigationBar/>
+      <NavigationBar onSubmit={this.populateMovies}/>
       This is a sample stateful and server-side rendered React IMDB application.
     </div>
     );
   }
 }
 
-class Form extends React.Component {
-	handleSubmit = async (event) => {
-  	event.preventDefault();
-    const resp = await axios.get(`https://www.themoviedb.org/discover/movie?sort_by=popularity.desc`);
-    this.props.onSubmit(resp.data);
-  };
-	render() {
-  	return (
-    	<form onSubmit={this.handleSubmit}>
-    	  <input
-          type="text"
-          value={this.state.userName}
-          onChange={event => this.setState({ userName: event.target.value })}
-          placeholder="GitHub username"
-          required
-        />
-        <button>Add card</button>
-    	</form>
-    );
-  }
-}
 
 class NavigationBar extends React.Component{
 
     state = { movieType: 'Popular'};
 
     handleSubmit = async (event) => {
+      console.log('triggered handle submit');
       	event.preventDefault();
         const resp = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=a787ed25d3a7aef96d3079f0269df80b`);
-        console.log(resp)
+        console.log('triggered handle submit finished');
       };
 
 
