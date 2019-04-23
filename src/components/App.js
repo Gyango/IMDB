@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const url = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/discover/movie?api_key=a787ed25d3a7aef96d3079f0269df80b&primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22';
+
 const MovieList = (props) => (
   <div>
 {props.movies.map(profile => <Movie key={movie.id} {...profile}/>)}
@@ -39,7 +41,7 @@ export class App extends React.Component {
     return (
     <div>
       <h1>IMDB</h1>
-      <NavigationBar onSubmit={this.populateMovies}/>
+      <NavigationBar onClick={this.populateMovies}/>
       This is a sample stateful and server-side rendered React IMDB application.
     </div>
     );
@@ -54,7 +56,7 @@ class NavigationBar extends React.Component{
     handleSubmit = async (event) => {
       console.log('triggered handle submit');
       	event.preventDefault();
-        const resp = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=a787ed25d3a7aef96d3079f0269df80b`);
+        const resp = await axios.get(url);
         console.log('triggered handle submit finished');
       };
 
