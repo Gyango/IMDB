@@ -48,6 +48,7 @@
     "pm2": "^3.4.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-dropdown": "^1.6.4",
     "regenerator-runtime": "^0.13.2",
     "sass-loader": "^7.1.0",
     "serialize-javascript": "^1.6.1",
