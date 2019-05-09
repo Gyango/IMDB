@@ -14,7 +14,8 @@ class Movie extends React.Component {
 	render() {
   	const movie = this.props;
   	return (
-    	<div className="movie">
+    	<div className="movieEntry">
+      <img src={"https://image.tmdb.org/t/p/w342/" + movie.backdrop_path} />
       <div className="info">
          <div className="original_title">{movie.original_title}</div>
          <div className="overview">{movie.overview}</div>
