@@ -20,7 +20,7 @@ class Movie extends React.Component {
       <div className="info">
          <div className="original_title">{movie.original_title}</div>
          <div className="overview">{movie.overview}</div>
-         <div className="popularity">{movie.popularity}</div>
+         <div className="popularity">Popularity: {movie.popularity}</div>
        </div>
     	</div>
     );
