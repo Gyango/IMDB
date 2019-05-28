@@ -5,4 +5,12 @@ module.exports = {
   host: env.HOST || 'localhost',
   isDev: env.NODE_ENV !== 'production',
   isBrowser: typeof window !== 'undefined',
+  devServer: {
+    historyApiFallback: true,
+    publicPath: '/',
+    hot: true
+  },
+  output: {
+    publicPath: '/'
+  },
 };

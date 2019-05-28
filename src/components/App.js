@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Dropdown from 'react-dropdown'
+import { BrowserRouter, Router, Route, Link } from "react-router-dom";
 
 const urlForPopular = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/movie/popular?api_key=a787ed25d3a7aef96d3079f0269df80b&region=en-US';
 const urlForUpcoming = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/movie/upcoming?api_key=a787ed25d3a7aef96d3079f0269df80b&region=US';
@@ -16,7 +16,9 @@ class Movie extends React.Component {
   	const movie = this.props;
   	return (
     	<div className="movieEntry">
-      <img src={"https://image.tmdb.org/t/p/w342/" + movie.backdrop_path} />
+       <Link to={"/movies/" + this.props.id}>
+        <img src={"https://image.tmdb.org/t/p/w342/" + movie.backdrop_path} />
+       </Link>
       <div className="info">
          <div className="original_title">{movie.original_title}</div>
          <div className="overview">{movie.overview}</div>
@@ -27,7 +29,8 @@ class Movie extends React.Component {
   }
 }
 
-export class App extends React.Component {
+
+class MainMenu extends React.Component {
 
   state = {
     movies: [],
@@ -46,6 +49,18 @@ export class App extends React.Component {
       <NavigationBar onSubmit={this.populateMovies}/>
       <MovieList movies={this.state.movies}/>
       This is a sample stateful and server-side rendered React IMDB application.
+    </div>
+    );
+  }
+}
+
+export class App extends React.Component {
+
+  render()
+  {
+    return (
+    <div>
+      <MainMenu/>
     </div>
     );
   }

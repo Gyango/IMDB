@@ -1,11 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 import { App } from 'components/App';
+import { MovieDetail } from 'components/MovieDetail';
 
 import '../styles/index.scss';
 
+const routing = (
+
+
+
+  <Router>
+    <div>
+      <Route exact path="/" component={App} />
+      <Route path="/movies/:movieId" component={MovieDetail} />
+    </div>
+  </Router>
+)
+
 ReactDOM.hydrate(
-  <App  />,
+  routing,
   document.getElementById('root')
 );
