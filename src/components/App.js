@@ -4,6 +4,7 @@ import { BrowserRouter, Router, Route, Link } from "react-router-dom";
 
 const urlForPopular = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/movie/popular?api_key=a787ed25d3a7aef96d3079f0269df80b&region=en-US';
 const urlForUpcoming = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/movie/upcoming?api_key=a787ed25d3a7aef96d3079f0269df80b&region=US';
+const urlForSearch = "https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/search/movie?api_key=a787ed25d3a7aef96d3079f0269df80b&query="
 
 const MovieList = (props) => (
   <div>
@@ -76,6 +77,13 @@ class NavigationBar extends React.Component{
     this.props.onSubmit(resp.data);
   };
 
+  async searchMovies(movieName){
+    console.log("Search function param: " + movieName);
+    const resp = await axios.get(urlForSearch +  movieName);
+    console.log(resp.data);
+    this.props.onSubmit(resp.data);
+  };
+
     state = { movieType: 'Popular'};
 
 render(){
@@ -89,6 +97,10 @@ render(){
             <a onClick={() => this.newHandleSubit(urlForUpcoming, 'Upcoming')}>Upcoming</a>
           </div>
           </form>
+        </li>
+        <li>
+            <input ref="search" type="search" placeholder="Movie name" />
+            <button onClick={() => this.searchMovies(this.refs.search.value)}>Search</button>
         </li>
       </ul>
     );
