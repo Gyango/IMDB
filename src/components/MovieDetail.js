@@ -25,12 +25,17 @@ export class MovieDetail extends React.Component {
   render()
   {
     return (
-      <div className="info">
+      <div className="movieDetail">
           {this.state && this.state.movie &&
-            <div>
-            <div className="original_title">{this.state.movie.original_title}</div>
-            <div className="overview">{this.state.movie.overview}</div>
-            <div className="popularity">Popularity: {this.state.movie.popularity}</div>
+            <div class="row">
+              <div className="original_title">{this.state.movie.original_title}</div>
+              <div class="column">
+                <img src={"https://image.tmdb.org/t/p/w342/" + this.state.movie.backdrop_path} />
+                <div>
+                  <div className="overview">{this.state.movie.overview}</div>
+                  <div className="popularity">Popularity: {this.state.movie.popularity}</div>
+                </div>
+              </div>
             </div>
           }
        </div>

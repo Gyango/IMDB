@@ -19,6 +19,19 @@ body {
   justify-content: center;
 }
 
+.column {
+	column-count: 2
+}
+
+.movieDetail {
+  border: thick solid #ddd;
+  background-color: #fbfbfb;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
 .original_title{
   border: thin solid #ddd;
   justify-content: center;
@@ -26,6 +39,7 @@ body {
   font-weight: bold;
   text-align:center;
 }
+
 
 .overview{
     padding: 10px;
