@@ -46,6 +46,7 @@ export class MovieDetail extends React.Component {
     console.log(resp.data);
     console.log("Movie cast data:")
     console.log(respCast.data.cast);
+
     this.setState({movie : resp.data});
     this.setState({actors : respCast.data.cast});
 }
@@ -62,10 +63,17 @@ export class MovieDetail extends React.Component {
                 <img src={"https://image.tmdb.org/t/p/w342/" + this.state.movie.backdrop_path} />
                 <div>
                   <div className="overview">{this.state.movie.overview}</div>
+                  <div className="releaseDate">Release date: {this.state.movie.release_date}</div>
+                  <div className="genres">
+                  Genres:
+                  {this.state.movie.genres.map(function(genre){
+                    return genre.name;
+                  }).join(", ")}
+                  </div>
                   <div className="popularity">Popularity: {this.state.movie.popularity}</div>
                 </div>
               </div>
-              <Actors actors={this.state.actors}/>
+              <Actors actors={this.state.actors} />
             </div>
           }
        </div>
