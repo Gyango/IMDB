@@ -13,8 +13,9 @@ class Actor extends React.Component {
 	render() {
   	const actor = this.props;
   	return (
-    	<div>
-          <div>Actor id: {this.props.cast_id}</div>
+    	<div className="actorList">
+          <div><img src={"https://image.tmdb.org/t/p/w342/" + this.props.profile_path} height="200" width="150"/></div>
+          <div>{this.props.character} (played by {this.props.name})</div>
     	</div>
     );
   }

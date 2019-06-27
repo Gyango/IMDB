@@ -19,8 +19,15 @@ body {
   justify-content: center;
 }
 
+.actorList{
+  column-count: 2;
+  padding: 5px;
+  border-style: groove;
+}
+
 .column {
-	column-count: 2
+	column-count: 2;
+  padding: 20px;
 }
 
 .movieDetail {
