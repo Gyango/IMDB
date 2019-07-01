@@ -85,7 +85,8 @@ export class MovieDetail extends React.Component {
                   <div className="popularity">Popularity: {this.state.movie.popularity}</div>
                 </div>
                 <div>
-                  <YouTube videoId={this.state.trailerId} onReady={this.onReady} />
+                  <iframe width="420" height="315" src={"https://www.youtube.com/embed/" + this.state.trailerId}/>
+
                 </div>
               </div>
               <Actors actors={this.state.actors} />
