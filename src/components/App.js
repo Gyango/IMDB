@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { BrowserRouter, Router, Route, Link } from "react-router-dom";
 
-const urlForPopular = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/movie/popular?api_key=a787ed25d3a7aef96d3079f0269df80b&region=en-US';
+const urlForPopular = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/discover/movie?api_key=a787ed25d3a7aef96d3079f0269df80b&language=en-US&sort_by=popularity.desc';
 const urlForUpcoming = 'https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/movie/upcoming?api_key=a787ed25d3a7aef96d3079f0269df80b&region=US';
 const urlForSearch = "https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/search/movie?api_key=a787ed25d3a7aef96d3079f0269df80b&query="
 
