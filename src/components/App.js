@@ -47,7 +47,7 @@ class MainMenu extends React.Component {
     return (
     <div>
       <h1>IMDB</h1>
-      <NavigationBar onSubmit={this.populateMovies}/>
+      <NavigationBar populateMovies={this.populateMovies}/>
       <MovieList movies={this.state.movies}/>
       This is a sample stateful and server-side rendered React IMDB application.
     </div>
@@ -74,14 +74,14 @@ class NavigationBar extends React.Component{
     this.setState({movieType: type})
     const resp = await axios.get(url);
     console.log(resp.data);
-    this.props.onSubmit(resp.data);
+    this.props.populateMovies(resp.data);
   };
 
   async searchMovies(movieName){
     console.log("Search function param: " + movieName);
     const resp = await axios.get(urlForSearch +  movieName);
     console.log(resp.data);
-    this.props.onSubmit(resp.data);
+    this.props.populateMovies(resp.data);
   };
 
     state = { movieType: 'Popular'};

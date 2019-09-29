@@ -15,8 +15,8 @@ class Actor extends React.Component {
   	const actor = this.props;
   	return (
     	<div className="actorList">
-          <div><img src={"https://image.tmdb.org/t/p/w342/" + this.props.profile_path} height="200" width="150"/></div>
-          <div>{this.props.character} (played by {this.props.name})</div>
+          <div align="left"><img src={"https://image.tmdb.org/t/p/w342/" + this.props.profile_path} height="200" width="150"/></div>
+          <div align="left">{this.props.character} (played by {this.props.name})</div>
     	</div>
     );
   }
@@ -30,10 +30,9 @@ export class MovieDetail extends React.Component {
   }
 
   async componentDidMount() {
-    const { match: { params } } = this.props;
+    const  params  = this.props.match.params;
 
     console.log("MovieID " + params.movieId);
-    let movieId = this.props.match.params.movieId;
 
     var url = "https://cors-anywhere.herokuapp.com/http://api.themoviedb.org/3/movie/" + params.movieId + "?api_key=a787ed25d3a7aef96d3079f0269df80b";
     console.log("url for movie" +url);
@@ -84,10 +83,9 @@ export class MovieDetail extends React.Component {
                   </div>
                   <div className="popularity">Popularity: {this.state.movie.popularity}</div>
                 </div>
-                <div>
-                  <iframe width="420" height="315" src={"https://www.youtube.com/embed/" + this.state.trailerId}/>
-
-                </div>
+              </div>
+              <div>
+                <iframe width="420" height="315" align="center" src={"https://www.youtube.com/embed/" + this.state.trailerId}/>
               </div>
               <Actors actors={this.state.actors} />
             </div>
