@@ -91,7 +91,7 @@ render(){
       <ul>
         <li className="dropdown">
         <form>
-          <a href="javascript:void(0)" className="dropbtn">{this.state.movieType}</a>
+          <a className="dropbtn">{this.state.movieType}</a>
           <div className="dropdown-content">
             <a onClick={() => this.newHandleSubit(urlForPopular, 'Popular')}>Popular</a>
             <a onClick={() => this.newHandleSubit(urlForUpcoming, 'Upcoming')}>Upcoming</a>
