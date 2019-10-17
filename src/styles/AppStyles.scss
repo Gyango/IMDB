@@ -1,0 +1,52 @@
+$main: #555;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  #root {
+    color: $main;
+  }
+}
+
+.mainWindow{
+   position: relative;
+}
+
+.movieEntry {
+	border: thick solid #ddd;
+  background-color: #fbfbfb;
+  padding: 1rem;
+  display: flex;
+  justify-content: left;
+  position: static;
+}
+
+.moviePicture{
+  justify-content: left;
+  position: relative;
+}
+
+.moviePicture img{
+  max-width: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+  .moviePicture img {max-width: 150px;}
+}
+
+@media only screen and (min-width: 600px) {
+  .moviePicture img {max-width: 250px;}
+}
+
+@media only screen and (min-width: 600px) {
+  .moviePicture img {max-width: 600px;}
+}
+
+
+.movieList{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}

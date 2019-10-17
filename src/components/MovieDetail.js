@@ -15,7 +15,7 @@ class Actor extends React.Component {
   	const actor = this.props;
   	return (
     	<div className="actorList">
-          <div align="left"><img src={"https://image.tmdb.org/t/p/w342/" + this.props.profile_path} height="200" width="150"/></div>
+          <div ><img src={"https://image.tmdb.org/t/p/w342/" + this.props.profile_path} height="200" width="150"/></div>
           <div align="left">{this.props.character} (played by {this.props.name})</div>
     	</div>
     );
@@ -84,8 +84,8 @@ export class MovieDetail extends React.Component {
                   <div className="popularity">Popularity: {this.state.movie.popularity}</div>
                 </div>
               </div>
-              <div>
-                <iframe width="420" height="315" align="center" src={"https://www.youtube.com/embed/" + this.state.trailerId}/>
+              <div class="trailerVideoContainer">
+                <iframe src={"https://www.youtube.com/embed/" + this.state.trailerId}/>
               </div>
               <Actors actors={this.state.actors} />
             </div>

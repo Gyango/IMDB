@@ -6,10 +6,11 @@ import { App } from 'components/App';
 import { MovieDetail } from 'components/MovieDetail';
 
 import '../styles/index.scss';
+import '../styles/AppStyles.scss';
+import '../styles/MovieDetailStyles.scss';
+
 
 const routing = (
-
-
 
   <Router>
     <div>

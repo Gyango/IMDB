@@ -17,10 +17,12 @@ class Movie extends React.Component {
   	const movie = this.props;
   	return (
     	<div className="movieEntry">
-       <Link to={"/movies/" + this.props.id}>
-        <img src={"https://image.tmdb.org/t/p/w342/" + movie.backdrop_path} />
-       </Link>
-      <div className="info">
+        <div className="moviePicture">
+           <Link to={"/movies/" + this.props.id}>
+            <img  src={"https://image.tmdb.org/t/p/w342/" + movie.backdrop_path} />
+           </Link>
+       </div>
+       <div className="info">
          <div className="original_title">{movie.original_title}</div>
          <div className="overview">{movie.overview}</div>
          <div className="popularity">Popularity: {movie.popularity}</div>
@@ -45,10 +47,12 @@ class MainMenu extends React.Component {
   render()
   {
     return (
-    <div>
+    <div className="mainWindow">
       <h1>IMDB</h1>
       <NavigationBar populateMovies={this.populateMovies}/>
-      <MovieList movies={this.state.movies}/>
+      <div className="movieList">
+        <MovieList movies={this.state.movies}/>
+      </div>
       This is a sample stateful and server-side rendered React IMDB application.
     </div>
     );
@@ -83,6 +87,7 @@ class NavigationBar extends React.Component{
     console.log(resp.data);
     this.props.populateMovies(resp.data);
   };
+
 
     state = { movieType: 'Popular'};
 

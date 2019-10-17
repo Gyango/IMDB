@@ -10,61 +10,6 @@ body {
   }
 }
 
-.movieEntry {
-	border: thin solid #ddd;
-  background-color: #fbfbfb;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.actorList{
-  column-count: 2;
-  padding: 5px;
-  border-style: groove;
-}
-
-.column {
-	column-count: 3;
-  padding: 20px;
-  justify-content: center;
-}
-
-.movieDetail {
-  border: thick solid #ddd;
-  background-color: #fbfbfb;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.original_title{
-  border: thin solid #ddd;
-  justify-content: center;
-  font-size: 50;
-  font-weight: bold;
-  text-align:center;
-}
-
-
-.overview{
-    padding: 5px;
-}
-
-.popularity{
-  padding: 5px;
-}
-
-.releaseDate{
-  padding: 5px;
-}
-
-.genres{
-  padding: 5px;
-}
-
 
 ul {
   list-style-type: none;

@@ -1,0 +1,69 @@
+.actorList{
+  column-count: 2;
+  border: thick solid #ddd;
+  background-color: #fbfbfb;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: left;
+}
+
+.trailerVideoContainer{
+  overflow: hidden;
+  // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.trailerVideoContainer iframe{
+  border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+.column {
+	column-count: 3;
+  padding: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.movieDetail {
+  border: thick solid #ddd;
+  background-color: #fbfbfb;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.original_title{
+  border: thin solid #ddd;
+  justify-content: center;
+  font-size: 50;
+  font-weight: bold;
+  text-align:center;
+}
+
+
+.overview{
+    padding: 2px;
+    display: flex;
+}
+
+.popularity{
+  padding: 5px;
+}
+
+.releaseDate{
+  padding: 5px;
+}
+
+.genres{
+  padding: 5px;
+}
