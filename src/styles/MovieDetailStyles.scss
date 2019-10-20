@@ -8,11 +8,61 @@
   justify-content: left;
 }
 
+.actorProfilePic{
+  justify-content: left;
+  position: relative;
+}
+
+.actorProfilePic img{
+    justify-content: left;
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .actorProfilePic img {max-width: 50px;}
+}
+
+@media only screen and (min-width: 600px) {
+  .actorProfilePic img {max-width: 75px;}
+}
+
+@media only screen and (min-width: 768px) {
+  .actorProfilePic img {max-width: 150px;}
+}
+
+.backdropPic{
+  justify-content: center;
+  position: relative;
+}
+
+.backdropPic img{
+    justify-content: left;
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .backdropPic img {max-width: 100px;}
+}
+
+@media only screen and (min-width: 600px) {
+  .backdropPic img {max-width: 150px;}
+}
+
+@media only screen and (min-width: 768px) {
+  .backdropPic img {max-width: 400px;}
+}
+
 .trailerVideoContainer{
   overflow: hidden;
   // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
   padding-top: 56.25%;
   position: relative;
+}
+
+.trailerVideoContainer-4x3 {
+  padding-top: 75%;
 }
 
 .trailerVideoContainer iframe{
@@ -40,6 +90,7 @@
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .original_title{
